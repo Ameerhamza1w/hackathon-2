@@ -5,23 +5,24 @@ import Image from "next/image";
 // Hero Component
 const Hero = () => {
   return (
-    <div className="h-[713px] w-full relative banner">
+    <div className="relative h-[713px] w-full banner">
       <Image
         src="/herohero.jpg"
         width={1440}
         height={100}
         className="absolute w-full h-full object-cover"
-        alt="Hero Banner"
+        alt="Hero Image"
       />
-      <div className="banner-content bg-[#FFF3E3] p-5 z-30 absolute right-12 top-2/4 -translate-y-2/4 w-full sm:w-[643px] px-4 sm:px-8">
-        <h1 className="text-[#333333] font-poppins font-bold text-lg sm:text-2xl">New Arrival</h1>
-        <h5 className="text-[32px] sm:text-[52px] text-[#B88E2F] font-poppins font-bold">
-          Discover Our <br />New Collection
+      <div className="absolute z-30 top-2/4 right-12 w-[643px] p-5 bg-[#FFF3E3] transform -translate-y-2/4">
+        <h1 className="text-[#333333] font-poppins font-bold">New Arrival</h1>
+        <h5 className="text-[52px] text-[#B88E2F] font-poppins font-bold">
+          Discover Our <br /> New Collection
         </h5>
-        <p className="font-poppins font-bold text-[16px] sm:text-[18px] text-[#333333]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+        <p className="font-poppins font-bold text-[18px] text-[#333333]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus nec ullamcorper mattis.
         </p>
-        <button className="w-full sm:w-[222px] h-[60px] sm:h-[74px] pt-[15px] sm:pt-[25px] font-poppins font-bold bg-[#B88E2F] text-[#FFFFFF] mt-4 sm:mt-6">
+        <button className="w-[222px] h-[74px] bg-[#B88E2F] text-[#FFFFFF] font-poppins font-bold px-[72px] py-[25px] mt-5">
           BUY Now
         </button>
       </div>
@@ -51,15 +52,11 @@ export const Hero1 = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <div key={product.id} className="relative group bg-white rounded-lg shadow-md overflow-hidden flex flex-col justify-center items-center">
-              <div className="flex justify-center items-center h-[200px] sm:h-[300px] w-full">
+              <div className="flex justify-center items-center h-[300px] w-[300px]">
                 <Image src={product.img} alt={product.title} width={300} height={300} className="object-contain" />
               </div>
               {product.discount && (
-                <div
-                  className={`absolute top-4 right-4 text-white text-xs font-bold flex items-center justify-center ${
-                    product.discount === "New" ? "bg-green-500" : "bg-red-500"
-                  } w-8 h-8 rounded-full`}
-                >
+                <div className={`absolute top-4 right-4 text-white text-xs font-bold flex items-center justify-center ${product.discount === "New" ? "bg-green-500" : "bg-red-500"} w-8 h-8 rounded-full`}>
                   {product.discount}
                 </div>
               )}
@@ -94,13 +91,13 @@ export const Hero3 = () => {
     <div className="flex justify-center items-center py-12 min-h-screen bg-gray-100">
       <div className="text-center max-w-screen-xl w-full px-4">
         <div className="mb-8">
-          <h2 className="font-poppins font-bold text-[32px] sm:text-[40px] text-[#333333]">Browse The Range</h2>
+          <h2 className="font-poppins font-bold text-[32px] text-[#333333]">Browse The Range</h2>
           <p className="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {categories.map((category) => (
-            <div key={category.id} className="flex flex-col items-center rounded-lg overflow-hidden bg-white shadow-md">
-              <Image src={category.img} alt={category.title} width={381} height={400} className="object-cover w-full h-[300px]" />
+            <div key={category.id} className="flex flex-col items-center rounded-lg overflow-hidden bg-white shadow-md" style={{ width: "381px", height: "480px" }}>
+              <Image src={category.img} alt={category.title} width={381} height={400} className="object-cover w-full h-[400px]" />
               <div className="mt-6 text-center">
                 <h3 className="text-lg font-semibold">{category.title}</h3>
               </div>
@@ -112,16 +109,14 @@ export const Hero3 = () => {
   );
 };
 
-// Hero4 Component
 export const Hero4 = () => {
   const images = [
-    { id: 1, src: "/images/care.png", alt: "" },
-    { id: 2, src: "/images/dining.png", alt: "" },
-    { id: 3, src: "/images/care.png", alt: "" },
+    { id: 1, src: "/images/care.png", alt: "Care" },
+    { id: 2, src: "/images/dining.png", alt: "Dining" },
+    { id: 3, src: "/images/care.png", alt: "Care" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const pairedImages = [
     { src1: "/images/care.png", src2: "/images/dining.png" },
     { src1: "/images/care.png", src2: "/images/dining.png" },
@@ -131,42 +126,17 @@ export const Hero4 = () => {
     <div className="bg-[#FCF8F3] py-12">
       <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4">
         <div className="flex-1">
-          <h2 className="text-4xl font-bold text-[#333333] mb-4">
-            50+ Beautiful Rooms <br />
-            Inspiration
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Our designer already made a lot of beautiful <br />
-            prototypes of rooms that inspire you.
-          </p>
-          <button className="bg-[#B88E2F] text-white py-3 px-6 rounded-lg hover:bg-[#a87929] transition duration-300">
-            Explore More
-          </button>
+          <h2 className="text-4xl font-bold text-[#333333] mb-4">50+ Beautiful Rooms Inspiration</h2>
+          <p className="text-gray-600 mb-6">Our designer already made a lot of beautiful prototypes of rooms that inspire you.</p>
+          <button className="bg-[#B88E2F] text-white py-3 px-6 rounded-lg hover:bg-[#a87929] transition duration-300">Explore More</button>
         </div>
         <div className="flex-1 relative">
-          <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-md flex">
+          <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-md flex">
             <div className="w-1/2 relative">
-              <Image
-                src={pairedImages[currentIndex].src1}
-                alt={images[currentIndex].alt}
-                layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
-              />
+              <Image src={pairedImages[currentIndex].src1} alt={images[currentIndex].alt} layout="fill" objectFit="contain" className="rounded-lg" />
             </div>
             <div className="w-1/2 relative">
-              <Image
-                src={pairedImages[currentIndex].src2}
-                alt={images[currentIndex].alt}
-                layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
-              />
-            </div>
-            <div className="absolute bottom-0 bg-white bg-opacity-80 w-full py-2 px-4">
-              <h3 className="text-lg font-semibold text-gray-800">
-                {images[currentIndex].alt}
-              </h3>
+              <Image src={pairedImages[currentIndex].src2} alt={images[currentIndex].alt} layout="fill" objectFit="contain" className="rounded-lg" />
             </div>
           </div>
         </div>
@@ -175,7 +145,6 @@ export const Hero4 = () => {
   );
 };
 
-// Hero5 Component
 export const Hero5 = () => {
   return (
     <div className="w-full h-auto flex flex-col justify-center items-center bg-white relative">
@@ -184,96 +153,42 @@ export const Hero5 = () => {
         <h2 className="text-3xl font-bold mt-1">#FuniroFurniture</h2>
       </div>
       <div className="w-full flex justify-center items-center mt-20 p-4 gap-6">
-        <div className="flex flex-col gap-4 w-[30%] sm:w-[25%]">
+        <div className="flex flex-col gap-4 w-[30%]">
           <div className="flex gap-4">
             <div className="w-[48%] h-[300px] relative">
-              <Image
-                src="/images/1.png"
-                alt="Left Image 1 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/1.png" alt="Left Image 1" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
             <div className="w-[48%] h-[150px] relative">
-              <Image
-                src="/images/f2.png"
-                alt="Left Image 2 (Landscape)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/f2.png" alt="Left Image 2" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-[48%] h-[300px] relative">
-              <Image
-                src="/images/f3.png"
-                alt="Left Image 3 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/f3.png" alt="Left Image 3" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
             <div className="w-[48%] h-[150px] relative">
-              <Image
-                src="/images/f4.png"
-                alt="Left Image 4 (Landscape)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/f4.png" alt="Left Image 4" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
           </div>
         </div>
         <div className="flex justify-center items-center w-[20%] h-[300px] relative">
-          <Image
-            src="/images/FM.png"
-            alt="Middle Image"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
-          />
+          <Image src="/images/FM.png" alt="Middle Image" layout="fill" objectFit="cover" className="rounded-lg" />
         </div>
-        <div className="flex flex-col gap-4 w-[30%] sm:w-[25%]">
+        <div className="flex flex-col gap-4 w-[30%]">
           <div className="flex gap-4">
             <div className="w-[48%] h-[300px] relative">
-              <Image
-                src="/images/FL.png"
-                alt="Right Image 1 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/FL.png" alt="Right Image 1" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
             <div className="w-[48%] h-[300px] relative">
-              <Image
-                src="/images/FL2.png"
-                alt="Right Image 2 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/FL2.png" alt="Right Image 2" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-[48%] h-[250px] relative">
-              <Image
-                src="/images/fL3.png"
-                alt="Right Image 3 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/fL3.png" alt="Right Image 3" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
             <div className="w-[48%] h-[250px] relative">
-              <Image
-                src="/images/FL4.png"
-                alt="Right Image 4 (Portrait)"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+              <Image src="/images/FL4.png" alt="Right Image 4" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
           </div>
         </div>
