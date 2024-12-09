@@ -23,7 +23,8 @@ function shop() {
             Shop
           </h2>
           <div className="flex ">
-            <p className="font-poppins font-semibold flex items-center">Home <IoChevronForwardSharp />
+            <p className="font-poppins font-semibold flex items-center">
+              Home <IoChevronForwardSharp />
             </p>
             <span>Shop</span>
           </div>
@@ -737,36 +738,66 @@ function shop() {
 
       <div className="bg-[#FAF3EA] py-20 px-10 flex justify-between gap-6">
         <div className="flex gap-4">
-            <Image src="/cup.png" width={200} height={300} alt="" className="w-10"/>
-            <div>
-                <h5 className="font-poppins font-bold text-[24px]">High Quality</h5>
-                <p className="text-[#898989]">crafted from top materials</p>
-            </div>
+          <Image
+            src="/cup.png"
+            width={200}
+            height={300}
+            alt=""
+            className="w-10"
+          />
+          <div>
+            <h5 className="font-poppins font-bold text-[24px]">High Quality</h5>
+            <p className="text-[#898989]">crafted from top materials</p>
+          </div>
         </div>
         <div className="flex gap-4">
-            <Image src="/guarantee.png" width={200} height={300} alt="" className="w-10"/>
-            <div>
-                <h5 className="font-poppins font-bold text-[24px]">Warranty Protection</h5>
-                <p className="text-[#898989]">Over 2 years</p>
-            </div>
+          <Image
+            src="/guarantee.png"
+            width={200}
+            height={300}
+            alt=""
+            className="w-10"
+          />
+          <div>
+            <h5 className="font-poppins font-bold text-[24px]">
+              Warranty Protection
+            </h5>
+            <p className="text-[#898989]">Over 2 years</p>
+          </div>
         </div>
         <div className="flex gap-4">
-            <Image src="/shipping.png" width={200} height={300} alt="" className="w-10"/>
-            <div>
-                <h5 className="font-poppins font-bold text-[24px]">Free Shipping</h5>
-                <p className="text-[#898989]">Order over 150 $</p>
-            </div>
+          <Image
+            src="/shipping.png"
+            width={200}
+            height={300}
+            alt=""
+            className="w-10"
+          />
+          <div>
+            <h5 className="font-poppins font-bold text-[24px]">
+              Free Shipping
+            </h5>
+            <p className="text-[#898989]">Order over 150 $</p>
+          </div>
         </div>
         <div className="flex gap-4">
-            <Image src="/customer-support.png" width={200} height={300} alt="" className="w-10"/>
-            <div>
-                <h5 className="font-poppins font-bold text-[24px]">24 / 7 Support</h5>
-                <p className="text-[#898989]">Dedicated support</p>
-            </div>
+          <Image
+            src="/customer-support.png"
+            width={200}
+            height={300}
+            alt=""
+            className="w-10"
+          />
+          <div>
+            <h5 className="font-poppins font-bold text-[24px]">
+              24 / 7 Support
+            </h5>
+            <p className="text-[#898989]">Dedicated support</p>
+          </div>
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
