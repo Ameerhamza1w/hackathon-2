@@ -19,10 +19,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ img, title, description }) => (
       className="rounded-xl w-full object-cover"
       alt={title}
     />
-    <h3 className="text-[22px] lg:text-[28px] font-bold text-[#333] mt-3">
+    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#333] mt-3">
       {title}
     </h3>
-    <p className="text-gray-600 text-[14px] sm:text-[16px] mt-2 text-justify">
+    <p className="text-gray-600 text-sm sm:text-base lg:text-lg mt-2 text-justify">
       {description}
     </p>
     <a
@@ -62,7 +62,8 @@ const BlogPage: React.FC = () => {
   return (
     <div>
       <Header />
-      <section className="relative h-[220px] sm:h-[320px]">
+
+      <section className="relative h-[40vh] sm:h-[50vh]">
         <Image
           src="/shopbanner.png"
           layout="fill"
@@ -70,18 +71,17 @@ const BlogPage: React.FC = () => {
           alt="Banner"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-black bg-opacity-30">
-          <h1 className="text-white text-[26px] sm:text-[40px] font-bold">
-            Blog
-          </h1>
+          <h1 className="text-white text-2xl sm:text-4xl font-bold">Blog</h1>
           <div className="flex items-center text-white mt-2">
-            <span className="text-sm sm:text-base">Home</span>
+            <span className="text-xs sm:text-sm">Home</span>
             <IoChevronForwardSharp />
-            <span className="text-sm sm:text-base">Blog</span>
+            <span className="text-xs sm:text-sm">Blog</span>
           </div>
         </div>
       </section>
+
       <section className="px-4 sm:px-8 lg:px-20 mt-10">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog) => (
             <BlogItem
               key={blog.id}
@@ -92,12 +92,14 @@ const BlogPage: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* Pagination Section */}
       <div className="flex justify-center mt-10 mb-8">
         <ul className="flex space-x-4">
           {["1", "2", "3"].map((page, index) => (
             <li
               key={index}
-              className={`w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center rounded-md ${
+              className={`w-8 h-8 sm:w-10 sm:h-10 flex justify-center items-center rounded-md ${
                 page === "1"
                   ? "bg-[#B88E2F] text-white"
                   : "bg-gray-200 text-gray-600"
@@ -106,11 +108,12 @@ const BlogPage: React.FC = () => {
               {page}
             </li>
           ))}
-          <li className="px-6 py-2 bg-gray-200 text-gray-600 rounded-md">
+          <li className="px-4 sm:px-6 py-2 bg-gray-200 text-gray-600 rounded-md">
             Next
           </li>
         </ul>
       </div>
+
       <Footer />
     </div>
   );

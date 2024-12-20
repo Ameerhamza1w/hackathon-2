@@ -1,86 +1,126 @@
-import React from 'react';
-import Image from 'next/image';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import { IoChevronForwardSharp } from "react-icons/io5";
+import { MdDelete } from "react-icons/md";
 
-const Cart = () => {
+import Image from "next/image";
+import Header from "../components/header";
+import React from "react";
+import Footer from "../components/footer";
+
+const page = () => {
   return (
     <div>
       <Header />
-      {/* Background Image */}
-      <Image
-        src="/images/cart.png"
-        alt="Cart background"
-        width={1440}
-        height={316}
-        priority
-        className="w-full object-cover"
-      />
-      <div className="flex flex-col lg:flex-row justify-evenly px-4 lg:px-8">
-        {/* Cart Items Section */}
-        <div className="flex-1 min-h-screen flex items-center justify-center">
-          <div className="p-6 max-w-5xl w-full">
-            {/* Cart Header */}
-            <div className="flex justify-between items-center bg-[#F9F1E7] py-3 px-4">
-              <h2 className="font-semibold text-[14px] sm:text-[16px]">Product</h2>
-              <h2 className="font-semibold text-[14px] sm:text-[16px]">Price</h2>
-              <div className="flex">
-                <h2 className="font-semibold text-[14px] sm:text-[16px] mr-4">Quantity</h2>
-                <h2 className="font-semibold text-[14px] sm:text-[16px]">Subtotal</h2>
-              </div>
+
+      {/* Banner Section */}
+      <div className="h-[40vh] w-full relative">
+        <Image
+          src="/shopbanner.png"
+          width={1440}
+          height={100}
+          className="absolute w-full h-full object-cover"
+          alt="Shop Banner"
+        />
+        <div className="flex justify-center items-center flex-col h-full z-50 relative text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold">
+            Cart
+          </h2>
+          <div className="flex text-xs sm:text-sm md:text-base">
+            <p className="font-poppins font-semibold flex items-center">
+              Home
+              <IoChevronForwardSharp />
+            </p>
+            <span>Cart</span>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      {/* Main Content Section */}
+      <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-20 lg:px-36 gap-7">
+        {/* Product Card Section */}
+        <div className="flex-1">
+          <div className="mt-8 pl-4">
+            <div className="h-[55px] bg-[#F9F1E7] flex justify-between items-center text-xs sm:text-sm md:text-base font-bold">
+              <h3>Product</h3>
+              <h3>Price</h3>
+              <h3>Quantity</h3>
+              <h3>Subtotal</h3>
             </div>
-            {/* Cart Items */}
-            <div className="mt-10">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4 pb-4 border-b">
-                <div className="flex items-center space-x-4">
-                  <img
-                    src="/images/c.png"
-                    alt="Asgaard sofa"
-                    className="h-[80px] w-[80px] sm:h-[105px] sm:w-[108px] object-cover rounded-md"
-                  />
-                  <h3 className="text-[#9F9F9F] text-[14px] sm:text-[16px] font-medium">
-                    Asgaard sofa
-                  </h3>
-                </div>
-                <div className="flex gap-4 items-center w-full md:w-auto justify-between">
-                  <p className="text-gray-500 text-[14px] sm:text-[16px]">Rs. 250,000.00</p>
-                  <input
-                    type="number"
-                    defaultValue="1"
-                    className="w-11 border rounded-md text-center py-1"
-                  />
-                  <p className="text-black text-[14px] sm:text-[16px]">Rs. 250,000.00</p>
-                </div>
-              </div>
-            </div>
+          </div>
+          <br />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 items-center text-center">
+            <Image
+              src="/sofa.png"
+              width={100}
+              height={100}
+              alt=""
+              className="rounded-[10px] w-20 h-20 sm:w-24 sm:h-24 bg-[#F9F1E7] mt-6"
+            />
+            <p className="text-sm sm:text-base md:text-lg">Asgaard Sofa</p>
+            <span className="text-sm sm:text-base md:text-lg">
+              Rs. 250,000.00
+            </span>
+            <button className="w-10 h-10 bg-[#FAFAFA] border border-gray-500 rounded-md flex justify-center items-center">
+              1
+            </button>
+            <span className="text-sm sm:text-base md:text-lg">
+              Rs. 250,000.00
+            </span>
+            <MdDelete className="h-5 w-5 sm:h-6 sm:w-6 text-[#B88E2F]" />
           </div>
         </div>
 
         {/* Cart Totals Section */}
-        <div className="flex-1 flex items-center justify-center min-h-screen mt-8 lg:mt-0">
-          <div className="bg-[#F9F1E7] py-6 px-4 rounded-md shadow-md w-full max-w-sm">
-            <div className="mb-6 text-center">
-              <h2 className="font-semibold text-[24px] sm:text-[32px]">Cart Totals</h2>
-            </div>
-            <div className="mb-6">
-              <div className="flex justify-between items-center text-[14px] sm:text-[16px] mb-4">
-                <span>Subtotal</span>
-                <span className="text-[#9F9F9F]">Rs. 250,000.00</span>
-              </div>
-              <div className="flex justify-between items-center text-[14px] sm:text-[16px] mb-4">
-                <span>Total</span>
-                <span className="text-[#B88E2F] font-semibold">Rs. 250,000.00</span>
-              </div>
-            </div>
-            <button className="w-full border-2 border-black rounded-md py-3 text-[16px] sm:text-[20px] hover:bg-black hover:text-white transition">
-              Check Out
-            </button>
+        <div className="w-full md:w-[393px] bg-[#F9F1E7] p-6 mt-7 flex flex-col items-center text-center font-poppins">
+          <h1 className="text-lg sm:text-2xl md:text-3xl font-bold">
+            Cart Totals
+          </h1>
+
+          <div className="flex justify-between w-full mt-5 sm:mt-7">
+            <p className="text-sm sm:text-base md:text-lg">Subtotal</p>
+            <span className="text-[#9F9F9F] text-sm sm:text-base">
+              Rs. 250,000.00
+            </span>
           </div>
+
+          <div className="flex justify-between w-full mt-3 sm:mt-5">
+            <p className="text-sm sm:text-base md:text-lg">Total</p>
+            <span className="text-[#B88E2F] text-sm sm:text-base md:text-lg">
+              Rs. 250,000.00
+            </span>
+          </div>
+
+          <button className="mt-5 sm:mt-6 w-full sm:w-[222px] h-[50px] md:h-[59px] bg-[#000000] text-white rounded-[15px] flex items-center justify-center">
+            Check Out
+          </button>
         </div>
       </div>
+      <br />
+      <hr />
+
+      {/* Features Section */}
+      <div className="bg-[#FAF3EA] py-10 sm:py-20 px-4 sm:px-8 flex flex-wrap justify-between gap-6">
+        {[
+          { src: "/cup.png", title: "High Quality", desc: "crafted from top materials" },
+          { src: "/guarantee.png", title: "Warranty Protection", desc: "Over 2 years" },
+          { src: "/shipping.png", title: "Free Shipping", desc: "Order over 150 $" },
+          { src: "/customer-support.png", title: "24 / 7 Support", desc: "Dedicated support" },
+        ].map((item, index) => (
+          <div key={index} className="flex gap-4 items-center w-full sm:w-auto">
+            <Image src={item.src} width={200} height={300} alt="" className="w-10" />
+            <div>
+              <h5 className="font-poppins font-bold text-sm sm:text-lg md:text-xl">
+                {item.title}
+              </h5>
+              <p className="text-[#898989] text-xs sm:text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <Footer />
     </div>
   );
 };
 
-export default Cart;
+export default page;

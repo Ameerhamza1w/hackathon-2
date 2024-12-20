@@ -116,7 +116,7 @@ export const Hero4 = () => {
     { id: 3, src: "/images/care.png", alt: "Care" },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
   const pairedImages = [
     { src1: "/images/care.png", src2: "/images/dining.png" },
     { src1: "/images/care.png", src2: "/images/dining.png" },

@@ -724,10 +724,10 @@ function shop() {
               1
             </li>
             <li className="w-14 h-14 bg-[#F9F1E7] rounded-md flex justify-center items-center">
-              1
+              2
             </li>
             <li className="w-14 h-14 bg-[#F9F1E7] rounded-md flex justify-center items-center">
-              1
+              3
             </li>
             <li className="w-20 h-14 bg-[#F9F1E7] rounded-md flex justify-center items-center">
               Next
